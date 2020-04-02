@@ -13,7 +13,7 @@
             <form class="login-form" runat="server">
                 <input id="user" type="text" placeholder="Shfrytezuesi" />
                 <input id="password" type="password" placeholder="Fjalekalimi" />
-                <asp:button class="form button" runat="server" text="Kycu"/>
+                <asp:button class="form button" runat="server" text=""/>
             </form>
         </div>
     </div>
