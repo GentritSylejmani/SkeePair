@@ -1,0 +1,33 @@
+﻿
+CREATE TABLE Client
+(
+	ClientID INT PRIMARY KEY IDENTITY(1,1),
+	Name VARCHAR (30) NOT NULL,
+	Surname VARCHAR(30) NOT NULL,
+	Email VARCHAR (50) UNIQUE,
+	PhoneNo VARCHAR(12) UNIQUE
+)
+
+CREATE TABLE ServiceTypes	
+(
+	ServiceID INT PRIMARY KEY,
+	Name VARCHAR (250) NOT NULL,
+	Description VARCHAR(MAX),
+	Price MONEY,
+)
+
+CREATE TABLE Equipment 
+(
+	EquipmentID INT PRIMARY	KEY,
+	Name VARCHAR(50) NOT NULL,
+)
+
+CREATE TABLE Services
+(
+	ClientID INT FOREIGN KEY REFERENCES Client(ClientID),
+	ServiceID INT FOREIGN KEY REFERENCES ServiceTypes(ServiceID),
+	EquipmentID INT FOREIGN KEY REFERENCES Equipment(EquipmentID),
+	Date DATE NOT NULL,
+	Price MONEY NOT NULL,
+)
+
